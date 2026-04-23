@@ -1,0 +1,310 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sakura: var(--sakura);
+  --color-sakura-deep: var(--sakura-deep);
+  --color-peach: var(--peach);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-jp: var(--font-jp);
+}
+
+:root {
+  --radius: 1rem;
+  /* Hoshino palette — warm cream + sakura pink + peach */
+  --background: oklch(0.975 0.018 75);          /* #fcf6ec cream */
+  --foreground: oklch(0.22 0.04 20);            /* deep plum/ink */
+  --ink: oklch(0.22 0.04 20);
+  --card: oklch(0.99 0.01 80);
+  --card-foreground: oklch(0.22 0.04 20);
+  --popover: oklch(0.99 0.01 80);
+  --popover-foreground: oklch(0.22 0.04 20);
+  --primary: oklch(0.78 0.13 15);               /* sakura pink */
+  --primary-foreground: oklch(0.99 0.005 80);
+  --secondary: oklch(0.94 0.03 50);
+  --secondary-foreground: oklch(0.22 0.04 20);
+  --muted: oklch(0.94 0.025 60);
+  --muted-foreground: oklch(0.5 0.04 30);
+  --accent: oklch(0.82 0.12 45);                /* peach */
+  --accent-foreground: oklch(0.22 0.04 20);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 80);
+  --border: oklch(0.9 0.02 50);
+  --input: oklch(0.92 0.02 50);
+  --ring: oklch(0.78 0.13 15);
+
+  --sakura: oklch(0.82 0.13 10);                /* light sakura */
+  --sakura-deep: oklch(0.7 0.18 12);            /* deep sakura */
+  --peach: oklch(0.82 0.12 45);
+  --cream: oklch(0.975 0.018 75);
+
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-jp: "Shippori Mincho", "Noto Serif JP", serif;
+
+  --gradient-pink: linear-gradient(135deg, oklch(0.82 0.13 10) 0%, oklch(0.82 0.12 45) 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.99 0.01 80) 0%, oklch(0.96 0.03 40) 100%);
+  --gradient-glow: radial-gradient(circle at 80% 20%, oklch(0.85 0.1 15 / 0.45), transparent 60%),
+                   radial-gradient(circle at 10% 90%, oklch(0.88 0.08 80 / 0.35), transparent 55%);
+  --shadow-soft: 0 20px 60px -20px oklch(0.7 0.18 12 / 0.25);
+  --shadow-card: 0 30px 80px -30px oklch(0.6 0.15 20 / 0.25);
+  --shadow-glow: 0 0 40px oklch(0.82 0.13 10 / 0.4);
+  /* Theme-aware translucent surfaces (light) */
+  --surface-soft: oklch(1 0 0 / 0.6);
+  --surface-strong: oklch(1 0 0 / 0.7);
+  --surface-hover: oklch(1 0 0 / 0.5);
+  --placeholder: oklch(0.5 0.04 30 / 0.6);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 280);
+  --foreground: oklch(0.96 0.01 60);
+  --card: oklch(0.22 0.03 280);
+  --card-foreground: oklch(0.96 0.01 60);
+  --popover: oklch(0.22 0.03 280);
+  --popover-foreground: oklch(0.96 0.01 60);
+  --primary: oklch(0.78 0.13 15);
+  --primary-foreground: oklch(0.18 0.02 280);
+  --secondary: oklch(0.28 0.04 280);
+  --secondary-foreground: oklch(0.96 0.01 60);
+  --muted: oklch(0.28 0.04 280);
+  --muted-foreground: oklch(0.78 0.03 60);
+  --accent: oklch(0.82 0.12 45);
+  --accent-foreground: oklch(0.18 0.02 280);
+  --border: oklch(1 0 0 / 0.12);
+  --input: oklch(1 0 0 / 0.08);
+  --cream: oklch(0.22 0.03 280);
+  /* Theme-aware translucent surfaces */
+  --surface-soft: oklch(1 0 0 / 0.06);
+  --surface-strong: oklch(1 0 0 / 0.1);
+  --surface-hover: oklch(1 0 0 / 0.12);
+  --placeholder: oklch(0.78 0.03 60 / 0.7);
+  --shadow-soft: 0 20px 60px -20px oklch(0 0 0 / 0.5);
+  --shadow-card: 0 30px 80px -30px oklch(0 0 0 / 0.6);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .font-display { font-family: var(--font-display); }
+  .font-jp { font-family: var(--font-jp); letter-spacing: 0.3em; }
+}
+
+/* Pill buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--gradient-pink);
+  color: white;
+  box-shadow: var(--shadow-soft);
+}
+.btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: var(--shadow-glow); }
+.btn-ghost {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { background: var(--surface-hover); border-color: var(--sakura); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  background: var(--surface-soft);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.section-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--sakura-deep);
+  font-weight: 500;
+}
+
+/* Hero portrait frame */
+.portrait-frame {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--card);
+  padding: 0.75rem;
+}
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: var(--gradient-pink);
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(20px);
+}
+
+/* Glass card */
+.glass {
+  background: var(--surface-soft);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Project card */
+.work-card {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-card:hover { transform: translateY(-8px); }
+
+/* Skill bar track */
+.skill-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--muted);
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--gradient-pink);
+  width: 0;
+}
+
+/* Petal */
+.petal {
+  position: fixed;
+  top: -40px;
+  width: 14px;
+  height: 14px;
+  border-radius: 70% 30% 70% 30% / 50% 50% 50% 50%;
+  background: oklch(0.85 0.12 12 / 0.7);
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(0.3px);
+}
+
+/* Background ambient gradient */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--gradient-glow), var(--background);
+  pointer-events: none;
+}
+
+/* Inputs */
+.field {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.9rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+.field::placeholder { color: var(--placeholder); }
+.field:focus { outline: none; border-color: var(--sakura); box-shadow: 0 0 0 3px oklch(0.82 0.13 10 / 0.2); }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); }
+
+/* Logo bubble */
+.logo-bubble {
+  width: 36px; height: 36px;
+  border-radius: 9999px;
+  background: var(--gradient-pink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-jp);
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Icon circle */
+.icon-circle {
+  width: 44px; height: 44px;
+  border-radius: 9999px;
+  background: var(--gradient-pink);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* small underline link */
+.under-link {
+  position: relative;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+.under-link::after {
+  content: "";
+  position: absolute; left: 0; bottom: -4px; height: 1px; width: 100%;
+  background: currentColor; opacity: 0.4;
+}
