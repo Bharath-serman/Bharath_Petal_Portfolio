@@ -9,6 +9,7 @@ export function Hero() {
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log("Hero useEffect running");
     if (!titleRef.current) return;
     // Color the "I" in YUKI and the "N" in HOSHINO (matches reference)
     titleRef.current.innerHTML = `
