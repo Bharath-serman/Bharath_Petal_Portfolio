@@ -10,7 +10,7 @@ const socials = [
   { name: "GitHub", icon: Github, href: "https://github.com/Bharath-serman" },
   { name: "Twitter", icon: Twitter, href: "https://twitter.com/yourusername" },
   { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/bharathserman?igsh=MTNlYnY3OWJwN28ydw==" },
-  { name: "Duolingo", icon: Duolingo, href: "https://www.duolingo.com/profile/yourusername" },
+  { name: "Duolingo", icon: Duolingo, href: "https://www.duolingo.com/profile/Bharathserman" },
 ];
 
 export function Footer() {
@@ -23,7 +23,9 @@ export function Footer() {
             <span className="font-display tracking-[0.35em]">BHARATH</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
-            A tiny studio of one, building calm interfaces with a touch of anime warmth.
+            A solo developer building small, meaningful digital experiences. Taking things one step
+            <br />
+            at a time, with a touch of creativity.
           </p>
         </div>
         <div>
@@ -58,7 +60,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border/60 flex flex-wrap justify-between gap-3 text-[0.7rem] tracking-[0.2em] uppercase text-muted-foreground">
         <p>© 2026 Bharath serman R · All petals reserved</p>
         <p className="flex items-center gap-2">
-          A Quiet Countryside is all I want!
+          A Quiet Countryside is all I want
         </p>
       </div>
     </footer>

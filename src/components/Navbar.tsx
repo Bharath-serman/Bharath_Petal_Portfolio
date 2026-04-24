@@ -23,7 +23,7 @@ export function Navbar() {
       //Current audio - (Refrain) from after the rain anime.
       audioRef.current = new Audio("/After_The_Rain_Theme.mp3");
       audioRef.current.loop = true;
-      audioRef.current.volume = 0.1;
+      audioRef.current.volume = 0.4;
     }
 
     if (muted) {
