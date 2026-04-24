@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Bharath's Petal" },
       { name: "description", content: "Anime-inspired portfolio of Yuki Hoshino, a Kyoto-based designer & developer crafting soft, expressive interfaces." },
-      { property: "og:title", content: "Yuki Hoshino — Hoshino Studio" },
+      { property: "og:title", content: "Bharath serman — Bharath's Petal" },
       { property: "og:description", content: "Crafting soft worlds where code blooms like cherry blossoms." },
     ],
   }),

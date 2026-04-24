@@ -15,19 +15,19 @@ export function Loader() {
       delay: anime.stagger(80),
       duration: 700,
     })
-    .add({
-      targets: ".loader-text",
-      opacity: [0, 1],
-      translateY: [10, 0],
-      duration: 500,
-    }, "-=400")
-    .add({
-      targets: ref.current,
-      opacity: [1, 0],
-      duration: 600,
-      delay: 500,
-      complete: () => setDone(true),
-    });
+      .add({
+        targets: ".loader-text",
+        opacity: [0, 1],
+        translateY: [10, 0],
+        duration: 500,
+      }, "-=400")
+      .add({
+        targets: ref.current,
+        opacity: [1, 0],
+        duration: 600,
+        delay: 500,
+        complete: () => setDone(true),
+      });
   }, []);
 
   if (done) return null;
@@ -48,7 +48,7 @@ export function Loader() {
           />
         ))}
       </div>
-      <p className="loader-text mt-8 font-jp text-sm text-muted-foreground opacity-0">花 ・ HOSHINO</p>
+      <p className="loader-text mt-8 font-jp text-sm text-muted-foreground opacity-0">BHARATH's PETAL</p>
     </div>
   );
 }
