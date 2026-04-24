@@ -6,6 +6,7 @@ export function Loader() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log("Loader useEffect running");
     const tl = anime.timeline({ easing: "easeOutExpo" });
     tl.add({
       targets: ".loader-petal",
