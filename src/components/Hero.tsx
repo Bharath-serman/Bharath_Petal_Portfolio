@@ -117,7 +117,7 @@ export function Hero() {
           </h1>
 
           <p className="hero-fade opacity-0 mt-5 text-lg text-muted-foreground">
-            <span className="font-jp text-foreground/80">星野　雪</span>
+            <span className="font-jp text-foreground/80">B·S</span>
             <span className="mx-2">·</span> Game Developer
             <span className="mx-2">·</span> Web Developer
             <span className="mx-2">·</span> AI Explorer
