@@ -22,15 +22,15 @@ export function About() {
             <br></br>
             Lately, I’ve been holding onto that feeling ever since I watched Violet Evergarden.
           </p>
-          <div className="grid grid-cols-3 gap-6 pt-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6">
             {[
               ["20", "Years Old"],
               ["23-09-2004", "Date of Birth"],
-              ["70+", "Anime watched"],     //Current time.
+              ["70+", "Anime watched"],
             ].map(([n, l]) => (
               <div key={l}>
                 <div className="font-display text-3xl text-primary">{n}</div>
-                <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mt-1">{l}</div>
+                <div className="text-[10px] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] uppercase text-muted-foreground mt-1">{l}</div>
               </div>
             ))}
           </div>

@@ -7,24 +7,24 @@ import kira from "@/assets/work-kira.jpg";
 const works = [
   {
     img: hanami,
-    tag: "Web App · Design System",
-    title: "Hanami OS",
-    desc: "A soft-pastel design system and component library inspired by seasonal Japanese color palettes.",
-    chips: ["React", "Tailwind", "Figma"],
+    tag: "Game Development · Unity Engine",
+    title: "The Green Void",
+    desc: "A 3D Game made using unity engine as part of my Game Development journey!",
+    chips: ["Unity", "C-Sharp", "3D"],
   },
   {
     img: lofi,
-    tag: "Mobile · iOS",
-    title: "Lo-Fi Diary",
-    desc: "A journaling companion that sets your day to ambient beats and generates sakura-tinted mood cards.",
-    chips: ["SwiftUI", "CoreML", "Audio"],
+    tag: "E-Commerce · Website",
+    title: "Aesthetic",
+    desc: "An E-Commerce site that was built using Next.JS, Supabase and Resend.",
+    chips: ["E-Commerce", "Aesthetic", "Next.JS"],
   },
   {
     img: kira,
-    tag: "Open Source",
-    title: "Kirameki Portfolio Kit",
-    desc: "An anime-aesthetic portfolio starter with anime.js-powered micro-interactions and glass UI.",
-    chips: ["anime.js", "Framer", "Open Source"],
+    tag: "Web Development · Placement Preparation",
+    title: "Cassiora",
+    desc: "A placement preparation site which is done completely using AI. Here you can take coding practices, MCQ Questions, Mock Interview with AI and more.",
+    chips: ["React JS", "Preparation site", "Open Source"],
   },
 ];
 
@@ -55,9 +55,9 @@ export function Works() {
                   height={600}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <span className="absolute top-4 left-4 chip">{w.tag}</span>
-                <span className="absolute bottom-4 right-4 icon-circle shadow-lg">
-                  <ArrowUpRight size={18} />
+                <span className="absolute top-3 left-3 sm:top-4 sm:left-4 chip max-w-[85%] text-left whitespace-normal break-words leading-snug !text-[0.6rem] sm:!text-[0.7rem]">{w.tag}</span>
+                <span className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 icon-circle shadow-lg w-8 h-8 sm:w-11 sm:h-11">
+                  <ArrowUpRight className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                 </span>
               </div>
               <div className="p-6">
