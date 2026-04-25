@@ -9,8 +9,7 @@ export function Contact() {
   const paperRef = useRef<HTMLFormElement>(null);
   const [sent, setSent] = useState(false);
 
-  useEffect(() => {
-    // Gentle idle sway for the wind chime
+  const startIdleAnimation = () => {
     if (chimeRef.current) {
       anime({
         targets: chimeRef.current,
@@ -22,6 +21,10 @@ export function Contact() {
         origin: 'top center'
       });
     }
+  };
+
+  useEffect(() => {
+    startIdleAnimation();
   }, []);
 
   const onSubmit = (e: React.FormEvent) => {
@@ -30,23 +33,81 @@ export function Contact() {
 
     setSent(true);
 
-    // Animate the chime reacting to the wind
+    // Stop idle animation
+    anime.remove(chimeRef.current);
+
+    // Play the bell sound
+    const bellSound = new Audio("/bell.mp3");
+    bellSound.volume = 0.4;
+    bellSound.play().catch(err => console.log("Audio play failed:", err));
+
+    // Animate the chime reacting to the pull and release
     anime({
       targets: chimeRef.current,
-      rotate: ['-3deg', '-20deg', '15deg', '-10deg', '5deg', '0deg'],
-      duration: 3000,
-      easing: 'easeOutElastic(1, 0.5)'
+      rotate: [
+        { value: 0, duration: 0 },
+        { value: -15, duration: 800, easing: 'easeOutQuad' }, // Pull down slower
+        { value: 20, duration: 1500, easing: 'easeOutElastic(1, .5)' }, // Release bounce
+        { value: 0, duration: 1200, easing: 'easeInOutSine' }
+      ],
     });
 
-    // Animate the paper tearing off and flying away into the sky
+    // Animate the paper tearing off and flying away slowly
     anime({
       targets: paperRef.current,
-      translateY: [0, 50, -800],
-      translateX: [0, 150, 500],
-      rotate: [0, -25, 120],
-      opacity: [1, 1, 0],
-      duration: 3500,
-      easing: 'easeInSine',
+      translateY: [
+        { value: 0, duration: 0 },
+        { value: 20, duration: 800, easing: 'easeOutQuad' }, // Gentle dip
+        { value: -1200, duration: 5000, easing: 'easeInOutSine' } // Slow, graceful ascent
+      ],
+      translateX: [
+        { value: 0, duration: 0 },
+        { value: 60, duration: 1500, easing: 'easeInOutSine' }, // Drifting
+        { value: 900, duration: 4300, easing: 'easeInOutSine' } // Floating away
+      ],
+      rotate: [
+        { value: 0, duration: 0 },
+        { value: -10, duration: 800, easing: 'easeInOutSine' },
+        { value: 160, duration: 5000, easing: 'easeInOutSine' }
+      ],
+      scale: [
+        { value: 1, duration: 0 },
+        { value: 1.02, duration: 800, easing: 'easeOutQuad' },
+        { value: 0.05, duration: 5000, easing: 'easeInOutSine' } // Shrink to a speck
+      ],
+      opacity: [
+        { value: 1, duration: 0 },
+        { value: 1, duration: 4000 },
+        { value: 0, duration: 1800, easing: 'linear' }
+      ],
+      easing: 'linear',
+      complete: () => {
+        // Prepare for the next paper after a short delay to enjoy the success message
+        setTimeout(() => {
+          setSent(false);
+          if (paperRef.current) {
+            paperRef.current.reset();
+            // Reset position instantly while hidden
+            anime.set(paperRef.current, {
+              translateY: 100,
+              translateX: 0,
+              rotate: 0,
+              scale: 0.8,
+              opacity: 0
+            });
+            // Fade in new paper gently
+            anime({
+              targets: paperRef.current,
+              translateY: 0,
+              scale: 1,
+              opacity: 1,
+              duration: 2000,
+              easing: 'easeOutQuart',
+              complete: startIdleAnimation
+            });
+          }
+        }, 1500);
+      }
     });
   };
 
@@ -55,7 +116,7 @@ export function Contact() {
       <div ref={ref} className="w-full flex flex-col items-center">
 
         <div className="text-center mb-10 sm:mb-16 z-20 max-w-2xl mx-auto">
-          <p className="reveal section-label">04 — Contact</p>
+          <p className="reveal section-label">05 — Contact</p>
           <h2 className="reveal font-display text-3xl sm:text-4xl lg:text-5xl mt-4 italic">
             If a thought drifts by like a petal, you can leave it here
           </h2>
@@ -69,8 +130,8 @@ export function Contact() {
 
           {/* Success Message revealed when paper flies away */}
           <div className={`absolute top-64 flex flex-col items-center transition-all duration-1000 ${sent ? 'opacity-100 scale-100 delay-[1500ms]' : 'opacity-0 scale-95 pointer-events-none'}`}>
-            <p className="font-display text-4xl italic text-primary">Carried by the breeze.</p>
-            <p className="text-muted-foreground mt-4 text-sm tracking-widest uppercase">I'll catch it soon ♡</p>
+            <p className="font-display text-4xl italic text-primary">Your message found its way.</p>
+            <p className="text-muted-foreground mt-4 text-sm tracking-widest uppercase">I'll catch it soon!</p>
           </div>
 
           {/* The Wind Chime (Furin) */}

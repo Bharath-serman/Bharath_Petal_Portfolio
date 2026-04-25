@@ -6,6 +6,7 @@ const links = [
   { id: "about", label: "About" },
   { id: "works", label: "Works" },
   { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -66,7 +67,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <button onClick={() => scrollTo("home")} className="flex items-center gap-3 relative z-50">
           <span className="logo-bubble">B</span>
-          <span className="font-display text-lg tracking-[0.35em] hidden sm:inline">BHARATH</span>
+          <span className="font-display text-lg tracking-[0.35em] hidden sm:inline cursor-pointer">BHARATH</span>
         </button>
 
         <nav className="hidden md:flex items-center gap-7">
