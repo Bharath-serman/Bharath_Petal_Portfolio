@@ -56,6 +56,14 @@ If you'd like to wander through this code on your own machine, follow these step
 
 This portfolio's design and code are a personal reflection of my journey, but you are welcome to draw inspiration from it. Please do not directly clone and use my personal information, polaroids, or unique structural prose for your own portfolio. 
 
+## Screenshots
+
+<img width="1356" height="615" alt="image" src="https://github.com/user-attachments/assets/4d895ae7-4e70-4d3a-9ca7-36e3f32189ea" />
+<br>
+<img width="1350" height="606" alt="image" src="https://github.com/user-attachments/assets/6ec7b2c8-d75d-44c3-baee-f02b87e7fe00" />
+<br>
+<img width="1352" height="541" alt="image" src="https://github.com/user-attachments/assets/07bca847-86bb-4217-909e-5cb423850124" />
+
 ---
 
 *Take things one step at a time, with a touch of creativity.*
