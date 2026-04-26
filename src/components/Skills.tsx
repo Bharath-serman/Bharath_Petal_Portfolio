@@ -3,13 +3,13 @@ import anime from "animejs";
 import { useScrollReveal } from "@/hooks/use-reveal";
 
 const skills = [
-  { id: "ui", name: "Game Dev / Unity Engine", x: 250, y: 360, desc: "Building immersive game experiences using Unity Engine with a focus on interactivity and real-time environments.", labelPos: "bottom" },
-  { id: "react", name: "Version Control / Github", x: 420, y: 280, desc: "Managing projects efficiently using GitHub with version control, collaboration workflows, and structured repositories.", labelPos: "bottom" },
-  { id: "motion", name: "Web / Full Stack Web Development", x: 450, y: 188, desc: "Developing full stack web applications with modern technologies, scalable architecture, and responsive design.", labelPos: "top" },
-  { id: "illust", name: "Programming Language / C-Sharp", x: 650, y: 100, desc: "Writing efficient C# code for Game logic, scripting, and building interactive VR/AR Experiences", labelPos: "top" },
-  { id: "swift", name: "Database / Supabase, MongoDB", x: 725, y: 130, desc: "Handling databases using Supabase and MongoDB for scalable storage, queries, and real-time data management.", labelPos: "bottom" },
-  { id: "aitools", name: "AI Tools / Code Editors", x: 580, y: 310, desc: "Using AI tools and modern code editors to enhance productivity, automate workflows, and streamline development.", labelPos: "bottom" },
-  { id: "uiux", name: "UI / Figma, Framer", x: 700, y: 360, desc: "Designing user interfaces in Figma and Framer with a focus on usability, aesthetics, and interactive prototyping.", labelPos: "bottom" },
+  { id: "ui", name: "Game Development", x: 250, y: 360, desc: "Building immersive game experiences using Unity Engine with a focus on interactivity and real-time environments.", labelPos: "bottom" },
+  { id: "react", name: "Version Control", x: 420, y: 280, desc: "Managing projects efficiently using GitHub and Plastic SCM with version control, collaboration workflows, and structured repositories.", labelPos: "bottom" },
+  { id: "motion", name: "Full Stack Web Development", x: 450, y: 188, desc: "Developing full stack web applications with modern technologies, scalable architecture, and responsive design.", labelPos: "top" },
+  { id: "illust", name: "Programming Language", x: 650, y: 100, desc: "Writing efficient C# code for Game logic, scripting, and building interactive VR/AR Experiences", labelPos: "top" },
+  { id: "swift", name: "Database", x: 725, y: 130, desc: "Handling databases using Supabase and MongoDB for scalable storage, queries, and real-time data management.", labelPos: "bottom" },
+  { id: "aitools", name: "AI Tools", x: 580, y: 310, desc: "Using AI tools and code editors like Cursor, Windsurf, Bolt.dly and more to enhance productivity, automate workflows, and streamline development.", labelPos: "bottom" },
+  { id: "uiux", name: "UI", x: 700, y: 360, desc: "Designing user interfaces in Figma and Framer with a focus on usability, aesthetics, and interactive prototyping.", labelPos: "bottom" },
 ];
 
 export function Skills() {

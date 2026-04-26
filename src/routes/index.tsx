@@ -9,6 +9,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Petals } from "@/components/Petals";
 import { LandingSplash } from "@/components/LandingSplash";
+import { Achievements } from "@/components/Achievements";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -27,17 +28,38 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [hasEntered, setHasEntered] = useState(false);
+  const [hasEntered, setHasEntered] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('hasEnteredPortfolio') === 'true';
+    }
+    return false;
+  });
+
+  const handleEnter = () => {
+    setHasEntered(true);
+    sessionStorage.setItem('hasEnteredPortfolio', 'true');
+  };
 
   useEffect(() => {
-    console.log("Index mounted");
-  }, []);
+    if (!hasEntered) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
+  }, [hasEntered]);
 
   return (
     <>
-      <LandingSplash onEnter={() => setHasEntered(true)} />
+      {!hasEntered && <LandingSplash onEnter={handleEnter} />}
       
-      <div className={`transition-opacity duration-1000 ${hasEntered ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`transition-opacity duration-1000 ${hasEntered ? 'opacity-100' : 'opacity-0 h-screen overflow-hidden pointer-events-none'}`}>
         <div className="ambient-bg" />
         <Petals />
         <Navbar />
@@ -47,6 +69,7 @@ function Index() {
           <Works />
           <Skills />
           <Experience />
+          <Achievements />
           <Contact />
         </main>
         <Footer />

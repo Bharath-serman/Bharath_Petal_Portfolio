@@ -6,47 +6,36 @@ import { MapPin, Calendar, Building2, ChevronRight, ChevronLeft } from "lucide-r
 const experiences = [
   {
     id: 1,
-    company: "Studio Ghibli (Placeholder)",
-    role: "Senior Visual Architect",
-    period: "2024 — Present",
-    desc: "Leading the creative direction for next-generation immersive storytelling. Crafting digital landscapes that feel hand-painted, bridging the gap between traditional art and modern web technology.",
-    location: "Koganei, Tokyo",
+    company: "R.M.K Engineering College",
+    role: "Computer science and design",
+    period: "2022 — 2026",
+    desc: "Completed my B.E degree in Computer science and design from R.M.K Engineering College, Kavaraipettai, Ponneri with a overall score of 8.2 CGPA",
+    location: "Kavaraipettai, Ponneri",
     color: "#6b9080",
     theme: "bg-emerald-500/5",
-    stationName: "Ghibli Station"
+    stationName: "R.M.K"
   },
   {
     id: 2,
-    company: "MAPPA Studios (Placeholder)",
-    role: "Motion Design Specialist",
-    period: "2022 — 2024",
-    desc: "Optimized high-impact animation sequences for web platforms. Developed custom physics-based UI components that mimic the dynamic energy of modern shonen aesthetics.",
-    location: "Suginami, Tokyo",
+    company: "Chennai Metro Rail Limited",
+    role: "Software Engineer - (Internship)",
+    period: "2024 June — 2024 July",
+    desc: "Worked as an Software Engineer Intern at CMRL, where I have collabarated with a team of 4 developers and created an Travel Planner as an additional feature for their website. It still present in the actual website.",
+    location: "Nandanam, Chennai",
     color: "#e8809a",
     theme: "bg-rose-500/5",
-    stationName: "Mappa Central"
+    stationName: "CMRL"
   },
   {
     id: 3,
-    company: "Kyoto Animation (Placeholder)",
-    role: "UI/UX Artisan",
-    period: "2020 — 2022",
-    desc: "Focused on 'soft' interfaces—creating digital environments that prioritize user comfort and emotional resonance. Specialized in delicate SVG illustrations and micro-interactions.",
-    location: "Uji, Kyoto",
+    company: "VRARRI",
+    role: "Game/product Tester",
+    period: "2025 December — Present",
+    desc: "Currently working as an Game / Product Tester at VRARRI. I have to test their latest AR/VR games and give my feedback to the developers.",
+    location: "Chennai",
     color: "#a4c3b2",
     theme: "bg-teal-500/5",
-    stationName: "Kyoto South"
-  },
-  {
-    id: 4,
-    company: "CyberConnect2 (Placeholder)",
-    role: "Interaction Designer",
-    period: "2018 — 2020",
-    desc: "Designed cinematic interface layouts for real-time applications. Collaborated with developers to ensure seamless integration of complex visual effects within lean performance budgets.",
-    location: "Fukuoka, JP",
-    color: "#957fef",
-    theme: "bg-purple-500/5",
-    stationName: "Fukuoka Terminal"
+    stationName: "VRARRI"
   }
 ];
 
@@ -107,7 +96,7 @@ export function Experience() {
   return (
     <section id="experience" className="relative py-32 px-4 sm:px-8 overflow-hidden">
       <div ref={ref} className="max-w-6xl mx-auto">
-        
+
         <div className="reveal mb-16 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
             <p className="section-label">04 — Journey</p>
@@ -122,18 +111,17 @@ export function Experience() {
 
         {/* Interactive Station Scene */}
         <div className="relative flex flex-col lg:flex-row items-center lg:items-stretch gap-12 min-h-[500px]">
-          
+
           {/* Left: The Tickets (Selection) */}
           <div className="w-full lg:w-1/3 flex lg:flex-col gap-3 overflow-x-auto pb-4 lg:pb-0 lg:overflow-visible no-scrollbar">
             {experiences.map((exp, i) => (
               <button
                 key={exp.id}
                 onClick={() => changeStation(i)}
-                className={`ticket-slot cursor-pointer relative flex-shrink-0 w-48 lg:w-full p-5 text-left rounded-2xl border transition-all duration-500 group ${
-                  active === i 
-                  ? 'bg-surface-strong border-primary shadow-soft' 
+                className={`ticket-slot cursor-pointer relative flex-shrink-0 w-48 lg:w-full p-5 text-left rounded-2xl border transition-all duration-500 group ${active === i
+                  ? 'bg-surface-strong border-primary shadow-soft'
                   : 'bg-surface-soft/40 border-border/50 hover:bg-surface-soft/80 hover:border-border'
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span className={`text-[10px] tracking-[0.2em] uppercase font-bold ${active === i ? 'text-primary' : 'text-muted-foreground'}`}>
@@ -147,7 +135,7 @@ export function Experience() {
                 <p className="text-[10px] text-muted-foreground/70 uppercase tracking-widest mt-1">
                   {exp.period}
                 </p>
-                
+
                 {/* Visual "Punch" hole */}
                 <div className="absolute top-1/2 -left-1.5 -translate-y-1/2 w-3 h-6 rounded-full bg-background border-r border-border/50" />
                 <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-6 rounded-full bg-background border-l border-border/50" />
@@ -157,24 +145,24 @@ export function Experience() {
 
           {/* Right: The Station Signboard */}
           <div className="flex-1 w-full relative perspective-[1000px]">
-            <div 
+            <div
               ref={signRef}
               className="relative w-full h-full glass rounded-[2.5rem] border-border/40 shadow-card overflow-hidden flex flex-col"
             >
               {/* Top Bar (Eki-meihyo style) */}
               <div className="w-full bg-surface-strong/80 border-b border-border/40 px-8 py-10 flex flex-col items-center relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
-                
+
                 <div className="flex items-center gap-6 mb-4">
                   <div className="h-px w-8 sm:w-16 bg-muted-foreground/30" />
                   <span className="text-xs sm:text-sm tracking-[0.4em] uppercase text-muted-foreground font-medium">Station</span>
                   <div className="h-px w-8 sm:w-16 bg-muted-foreground/30" />
                 </div>
-                
+
                 <h3 className="font-display text-4xl sm:text-5xl lg:text-6xl text-foreground tracking-tight transition-all">
                   {current.stationName}
                 </h3>
-                
+
                 <div className="mt-4 flex items-center gap-4 text-muted-foreground/60">
                   <span className="text-[10px] uppercase tracking-[0.3em]">Platform 4</span>
                   <div className="w-1 h-1 rounded-full bg-muted-foreground/30" />
@@ -185,7 +173,7 @@ export function Experience() {
               {/* Main Content Area */}
               <div ref={contentRef} className="flex-1 p-8 sm:p-12 flex flex-col justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                  
+
                   <div className="space-y-6">
                     <div>
                       <p className="text-primary text-[10px] tracking-[0.3em] uppercase font-bold mb-2 flex items-center gap-2">
@@ -194,7 +182,7 @@ export function Experience() {
                       </p>
                       <h4 className="text-2xl sm:text-3xl font-display">{current.company}</h4>
                     </div>
-                    
+
                     <div>
                       <p className="text-primary text-[10px] tracking-[0.3em] uppercase font-bold mb-2 flex items-center gap-2">
                         <Calendar size={12} />
@@ -239,7 +227,7 @@ export function Experience() {
                 </div>
               </div>
             </div>
-            
+
             {/* Background Mood Glow */}
             <div className={`absolute inset-0 -z-10 blur-[120px] opacity-20 transition-colors duration-1000 ${current.theme}`} />
           </div>

@@ -1,4 +1,10 @@
-import { Github, Twitter, Instagram, Heart } from "lucide-react";
+import { Github, Instagram, Heart } from "lucide-react";
+
+const ItchIo = ({ size = 24 }: { size?: number }) => (
+  <svg role="img" viewBox="0 0 24 24" width={size} height={size} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.502 3.406c-.34.004-.654.19-.824.512L.152 8.673a1.05 1.05 0 0 0 .14 1.154l5.352 6.43c.316.38.784.606 1.28.607h10.152c.496 0 .964-.227 1.28-.607l5.353-6.43a1.05 1.05 0 0 0 .14-1.154L21.322 3.92c-.17-.324-.484-.51-.824-.514H3.502zM7.172 7.75c1.196 0 2.164.97 2.164 2.165 0 1.196-.968 2.165-2.164 2.165-1.196 0-2.165-.97-2.165-2.165 0-1.196.97-2.165 2.165-2.165zm9.656 0c1.196 0 2.165.97 2.165 2.165 0 1.196-.97 2.165-2.165 2.165-1.196 0-2.164-.97-2.164-2.165 0-1.196.968-2.165 2.164-2.165z" />
+  </svg>
+);
 
 const Duolingo = ({ size = 24 }: { size?: number }) => (
   <svg role="img" viewBox="0 0 24 24" width={size} height={size} fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -8,7 +14,7 @@ const Duolingo = ({ size = 24 }: { size?: number }) => (
 
 const socials = [
   { name: "GitHub", icon: Github, href: "https://github.com/Bharath-serman" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com/yourusername" },
+  { name: "Itch IO", icon: ItchIo, href: "https://bharath-serman.itch.io/" },
   { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/bharathserman?igsh=MTNlYnY3OWJwN28ydw==" },
   { name: "Duolingo", icon: Duolingo, href: "https://www.duolingo.com/profile/Bharathserman" },
 ];
@@ -31,8 +37,12 @@ export function Footer() {
         <div>
           <p className="text-[0.7rem] tracking-[0.25em] uppercase text-muted-foreground mb-4">Navigate</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            {["About", "Works", "Craft", "Contact"].map((l) => (
-              <li key={l}><a href={`#${l.toLowerCase()}`} className="hover:text-primary transition-colors">{l}</a></li>
+            {["Home", "About", "Works", "Skills", "Experience", "Achievements", "Contact"].map((l) => (
+              <li key={l}>
+                <a href={`#${l.toLowerCase()}`} className="hover:text-primary transition-colors">
+                  {l}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -60,7 +70,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-border/60 flex flex-wrap justify-between gap-3 text-[0.7rem] tracking-[0.2em] uppercase text-muted-foreground">
         <p>© 2026 Bharath serman R · All petals reserved</p>
         <p className="flex items-center gap-2">
-          A Quiet Countryside is all I want
+          Bharath's Petal
         </p>
       </div>
     </footer>

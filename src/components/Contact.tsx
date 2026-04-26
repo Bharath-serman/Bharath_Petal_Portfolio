@@ -1,13 +1,15 @@
 import { useRef, useState, useEffect } from "react";
 import anime from "animejs";
-import { Send } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-reveal";
+import { sendEmail } from "@/lib/email";
+import { toast } from "sonner";
 
 export function Contact() {
   const ref = useScrollReveal<HTMLDivElement>();
   const chimeRef = useRef<HTMLDivElement>(null);
   const paperRef = useRef<HTMLFormElement>(null);
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const startIdleAnimation = () => {
     if (chimeRef.current) {
@@ -27,11 +29,29 @@ export function Contact() {
     startIdleAnimation();
   }, []);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (sent) return;
+    if (sent || loading) return;
 
-    setSent(true);
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      await sendEmail({ data });
+      setSent(true);
+      toast.success("Your message has been sent!");
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("Failed to send message. Please try again later.");
+      setLoading(false);
+      return;
+    }
 
     // Stop idle animation
     anime.remove(chimeRef.current);
@@ -82,6 +102,7 @@ export function Contact() {
       ],
       easing: 'linear',
       complete: () => {
+        setLoading(false);
         // Prepare for the next paper after a short delay to enjoy the success message
         setTimeout(() => {
           setSent(false);
@@ -165,36 +186,39 @@ export function Contact() {
 
               <div className="w-full relative mt-2 group">
                 <input
+                  name="name"
                   className="w-full bg-transparent border-b border-foreground/30 py-2 text-foreground focus:outline-none focus:border-primary transition-colors text-center font-display text-xl sm:text-2xl placeholder:text-foreground/70"
                   placeholder="Who is writing?"
                   required
-                  disabled={sent}
+                  disabled={sent || loading}
                 />
               </div>
               <div className="w-full relative group">
                 <input
                   type="email"
+                  name="email"
                   className="w-full bg-transparent border-b border-foreground/30 py-2 text-foreground focus:outline-none focus:border-primary transition-colors text-center font-display text-xl sm:text-2xl placeholder:text-foreground/70"
                   placeholder="Where to reply?"
                   required
-                  disabled={sent}
+                  disabled={sent || loading}
                 />
               </div>
               <div className="w-full relative group">
                 <textarea
+                  name="message"
                   className="w-full bg-transparent border-b border-foreground/30 py-2 text-foreground focus:outline-none focus:border-primary transition-colors text-center font-display text-xl sm:text-2xl placeholder:text-foreground/70 min-h-[140px] resize-none"
                   placeholder="Your thought..."
                   required
-                  disabled={sent}
+                  disabled={sent || loading}
                 />
               </div>
 
               <button
                 type="submit"
-                disabled={sent}
+                disabled={sent || loading}
                 className="mt-6 text-xs tracking-[0.3em] font-medium uppercase text-primary hover:text-foreground transition-colors flex items-center gap-2 disabled:opacity-50"
               >
-                Let it fly
+                {loading ? 'Sending...' : 'Let it fly'}
               </button>
             </form>
 
