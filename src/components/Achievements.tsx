@@ -77,8 +77,8 @@ export function Achievements() {
   return (
     <section id="achievements" className="relative pt-[25vw] pb-40 px-4 sm:px-8 overflow-hidden bg-surface-soft/20">
       {/* Background Decorative Text */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-[0.08] pointer-events-none select-none hidden lg:block">
-        <span className="font-display text-[22vw] leading-none tracking-tighter">SERENITY</span>
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full text-center opacity-[0.08] pointer-events-none select-none z-0">
+        <span className="font-display text-[22vw] leading-none tracking-tighter whitespace-nowrap">SERENITY</span>
       </div>
 
       <div ref={ref} className="max-w-6xl mx-auto relative">
@@ -101,7 +101,8 @@ export function Achievements() {
           {achievements.map((item, i) => (
             <div
               key={item.id}
-              className={`reveal achievement-polaroid group relative bg-white dark:bg-card p-6 shadow-card transition-all duration-500 hover:z-10 hover:scale-105`}
+              tabIndex={0}
+              className={`reveal achievement-polaroid group relative bg-white dark:bg-card p-6 shadow-card transition-all duration-500 hover:z-10 hover:scale-105 focus:z-10 focus:scale-105 cursor-pointer outline-none`}
               style={{
                 transform: `rotate(${item.rotation}deg)`,
                 marginTop: i % 2 === 0 ? "0" : "4rem"
@@ -109,7 +110,7 @@ export function Achievements() {
             >
               {/* Decorative Washi Tape */}
               <div
-                className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 opacity-40 mix-blend-multiply dark:mix-blend-overlay transition-all group-hover:scale-110"
+                className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 opacity-40 mix-blend-multiply dark:mix-blend-overlay transition-all group-hover:scale-110 group-focus:scale-110"
                 style={{
                   backgroundColor: item.color,
                   maskImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 100 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 5 Q 5 0, 10 5 T 20 5 T 30 5 T 40 5 T 50 5 T 60 5 T 70 5 T 80 5 T 90 5 T 100 5 L 100 35 Q 95 40, 90 35 T 80 35 T 70 35 T 60 35 T 50 35 T 40 35 T 30 35 T 20 35 T 10 35 T 0 35 Z\"/%3E%3C/svg%3E')",
@@ -118,18 +119,18 @@ export function Achievements() {
               />
 
               {/* Photo Area */}
-              <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-slate-50 dark:bg-slate-900 group-hover:shadow-inner transition-shadow">
+              <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-slate-50 dark:bg-slate-900 group-hover:shadow-inner group-focus:shadow-inner transition-shadow">
                 <div
-                  className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity"
+                  className="absolute inset-0 opacity-10 group-hover:opacity-20 group-focus:opacity-20 transition-opacity"
                   style={{ backgroundColor: item.color }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
                     <Milestone
-                      className="w-16 h-16 opacity-20 group-hover:scale-125 group-hover:rotate-12 transition-all duration-700"
+                      className="w-16 h-16 opacity-20 group-hover:scale-125 group-focus:scale-125 group-hover:rotate-12 group-focus:rotate-12 transition-all duration-700"
                       style={{ color: item.color }}
                     />
-                    <div className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-40 transition-opacity" style={{ backgroundColor: item.color }} />
+                    <div className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-40 group-focus:opacity-40 transition-opacity" style={{ backgroundColor: item.color }} />
                   </div>
                 </div>
 
@@ -144,7 +145,7 @@ export function Achievements() {
               {/* Text Area (Polaroid Bottom) */}
               <div className="space-y-4">
                 <div className="flex justify-between items-start gap-4">
-                  <h3 className="font-jp text-xl sm:text-2xl tracking-normal text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-jp text-xl sm:text-2xl tracking-normal text-foreground group-hover:text-primary group-focus:text-primary transition-colors">
                     {item.title}
                   </h3>
                   <span className="font-display text-primary/40 italic text-lg">#{item.id}</span>
@@ -154,21 +155,21 @@ export function Achievements() {
                   {item.issuer} • {item.date}
                 </p>
 
-                <p className="text-sm text-muted-foreground leading-relaxed opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-500 overflow-hidden">
+                <p className="text-sm text-muted-foreground leading-relaxed opacity-0 h-0 group-hover:opacity-100 group-focus:opacity-100 group-hover:h-auto group-focus:h-auto transition-all duration-500 overflow-hidden">
                   {item.desc}
                 </p>
 
                 <div className="pt-4 flex items-center justify-between">
-                  <div className="w-10 h-px bg-border group-hover:w-full transition-all duration-700" />
+                  <div className="w-10 h-px bg-border group-hover:w-full group-focus:w-full transition-all duration-700" />
                   <ExternalLink
                     size={14}
-                    className="ml-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer hover:text-primary"
+                    className="ml-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity cursor-pointer hover:text-primary focus:text-primary"
                   />
                 </div>
               </div>
 
               {/* Decorative "Coffee Stain" or Subtle Glow */}
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity" />
             </div>
           ))}
         </div>

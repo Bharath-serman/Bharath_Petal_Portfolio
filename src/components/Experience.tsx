@@ -113,12 +113,12 @@ export function Experience() {
         <div className="relative flex flex-col lg:flex-row items-center lg:items-stretch gap-12 min-h-[500px]">
 
           {/* Left: The Tickets (Selection) */}
-          <div className="w-full lg:w-1/3 flex lg:flex-col gap-3 overflow-x-auto pb-4 lg:pb-0 lg:overflow-visible no-scrollbar">
+          <div className="w-full lg:w-1/3 flex flex-col gap-3 pb-4 lg:pb-0">
             {experiences.map((exp, i) => (
               <button
                 key={exp.id}
                 onClick={() => changeStation(i)}
-                className={`ticket-slot cursor-pointer relative flex-shrink-0 w-48 lg:w-full p-5 text-left rounded-2xl border transition-all duration-500 group ${active === i
+                className={`ticket-slot cursor-pointer relative w-full p-5 text-left rounded-2xl border transition-all duration-500 group ${active === i
                   ? 'bg-surface-strong border-primary shadow-soft'
                   : 'bg-surface-soft/40 border-border/50 hover:bg-surface-soft/80 hover:border-border'
                   }`}
