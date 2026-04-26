@@ -24,9 +24,10 @@ export function About() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6">
             {[
-              ["20", "Years Old"],
+              ["Address", "Chennai, Tamil Nadu, India"],
               ["23-09-2004", "Date of Birth"],
               ["70+", "Anime watched"],
+              ["+91 72000 30913", "Mobile Number"],
             ].map(([n, l]) => (
               <div key={l}>
                 <div className="font-display text-3xl text-primary">{n}</div>

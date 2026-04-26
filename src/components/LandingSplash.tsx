@@ -225,7 +225,7 @@ export function LandingSplash({ onEnter }: { onEnter: () => void }) {
           className="group relative px-16 py-6 cursor-pointer overflow-hidden rounded-full bg-primary shadow-lg shadow-primary/20 transition-all duration-500 hover:shadow-primary/40 hover:scale-105 active:scale-95 disabled:opacity-50"
         >
           <span className="relative z-10 text-[14px] tracking-[0.5em] uppercase text-white font-bold">
-            {isGusting ? 'The wind blows...' : 'Board the Journey'}
+            {isGusting ? 'The wind blows...' : 'Venture Forth'}
           </span>
           <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </button>
