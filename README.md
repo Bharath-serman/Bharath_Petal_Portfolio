@@ -8,12 +8,12 @@ Inspired by the emotional warmth of Studio Ghibli and the deliberate pacing of *
 
 ## A Walk Through the Garden
 
-The portfolio is structured as a gentle journey:
+The portfolio is structured as a blissful journey:
 
 *   **The Cherry Blossom Tree (Home & Skills):** An interactive, glass-encased tree. Hover and click on the drifting petals to discover my links and tools. Just like skills, they grow and scatter with time.
 *   **The Train Station (Experience):** *“Next station is...”* Browse through my journey using a ticket-punching interface. Every role is a stop on a longer track.
 *   **The Memory Box (Achievements):** Scattered polaroids and washi tape. A scrapbook of certifications, streaks, and small victories.
-*   **The Wind Chime (Contact):** A digital *furin* (glass bell) and *tanzaku* (paper slip). Write a message, let it fly, and wait for the chime to ring in the breeze. (Powered by Resend).
+*   **The Wind Chime (Furin) (Contact):** A digital *furin* (glass bell) and *tanzaku* (paper slip). Write a message, let it fly, and wait for the chime to ring in the breeze. (Powered by Resend).
 
 ## The Tools Under the Soil
 
@@ -50,7 +50,7 @@ If you'd like to wander through this code on your own machine, follow these step
     ```bash
     npm run dev
     ```
-    The garden will open its gates at `http://localhost:5173`.
+    The petals will blossom at `http://localhost:5173`.
 
 ## License
 
