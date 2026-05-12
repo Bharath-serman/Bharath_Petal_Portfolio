@@ -24,6 +24,7 @@ This project is built with modern web technologies, chosen to keep the interface
 *   **Anime.js**: The wind that breathes life into the elements—handling the complex, physics-like animations of falling petals, floating papers, and swinging chimes.
 *   **Resend API**: Ensuring that the paper slips from the contact form actually find their way to my inbox.
 *   **Vercel**: Deployment and Maintenance.
+*   **VS code and Windsurf**: For Code Editing.
 
 ## Journeying Locally
 
