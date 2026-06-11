@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-reveal";
+
+//#region Asset Imports
 import kira from "@/assets/work-kira.jpg";
 import Archangel from "@/assets/Archangel.jpg";
 import Portfolio from "@/assets/Work-Portfolio.jpg";
@@ -10,7 +12,11 @@ import VR_Builder from "@/assets/VR_Builder.jpg";
 import Aesthetic from "@/assets/Aesthetic.jpg";
 import Black_Hole from "@/assets/Black_Hole.jpg";
 import AR from "@/assets/AR.jpg";
+import Verdantia from "@/assets/Verdantia.jpeg";
+//#endregion
 
+
+//#region Projects
 const works = [
   {
     img: TGV,
@@ -74,7 +80,7 @@ const works = [
     title: "Unity Portfolio",
     desc: "A Game type portfolio website completely made using Unity Engine. Built this as a part of my learning journey!",
     chips: ["Unity Engine", "Portfolio", "Itch IO", "3D"],
-    link: "https://github.com/Bharath-serman/Unity_Portfolio",
+    link: "https://bharath-serman.itch.io/bharath-portfolio",
   },
   {
     img: Archangel,
@@ -84,7 +90,17 @@ const works = [
     chips: ["Framer", "Prototype", "UI"],
     link: "https://heavy-platform-592488.framer.app/",
   },
+  {
+    img: Verdantia,
+    tag: "AR Garden · Unity Engine",
+    title: "Verdantia",
+    desc: "An Augmented reality based project made using unity engine. This is verdantia, A Garden in AR. Built with features like Plane detection, Object Instantiation and more.",
+    chips: ["Augmented Reality", "Unity Engine", "Mobile AR Development"],
+    link: "https://github.com/Bharath-serman/Verdantia",  //Github link
+  },
+
 ];
+//#endregion
 
 export function Works() {
   const ref = useScrollReveal<HTMLDivElement>();

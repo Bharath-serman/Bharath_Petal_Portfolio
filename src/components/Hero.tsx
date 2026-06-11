@@ -174,7 +174,7 @@ export function Hero() {
             <span className="font-jp text-foreground/80">B·S</span>
             <span className="mx-2">·</span> Game Developer
             <span className="mx-2">·</span> Web Developer
-            <span className="mx-2">·</span> Product Tester
+            <span className="mx-2">·</span> XR Game Tester
           </p>
 
           <p className="hero-fade opacity-0 mt-8 max-w-md text-foreground/80 leading-relaxed text-lg">
