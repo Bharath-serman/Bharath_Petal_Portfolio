@@ -300,6 +300,24 @@
   flex-shrink: 0;
 }
 
+/* Hero floating sakura petal grid */
+@keyframes petal-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.hero-petal-float { animation: petal-float 3s ease-in-out infinite; }
+.hero-petal-float:nth-child(2) { animation-delay: 0.4s; }
+.hero-petal-float:nth-child(3) { animation-delay: 0.8s; }
+.hero-petal-float:nth-child(4) { animation-delay: 1.2s; }
+
+.hero-petal-card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+.hero-petal-card:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: var(--shadow-glow);
+}
+
 /* small underline link */
 .under-link {
   position: relative;
