@@ -1,6 +1,6 @@
 # Bharath's Petal 🌸
 
-> *"Crafting soft worlds where code blooms like cherry blossoms."*
+> *"Crafting soft worlds where code blooms like Sakura blossoms."*
 
 Welcome to my digital garden. This repository holds the source code for my personal portfolio—a quiet, interactive space built to feel less like a traditional website and more like a gentle afternoon scene from a slice-of-life anime. 
 
