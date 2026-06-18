@@ -75,7 +75,7 @@ const _sendEmail = createServerFn({ method: "POST" })
 
                     <div style="margin-top: 40px; text-align: center;">
                       <a href="mailto:${validatedData.email}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #ffb7c5 0%, #e8809a 100%); color: white; text-decoration: none; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; box-shadow: 0 10px 20px rgba(232, 128, 154, 0.2);">
-                        Reply to Traveler
+                        Reply to ${validatedData.name}
                       </a>
                     </div>
                   </div>
@@ -83,7 +83,7 @@ const _sendEmail = createServerFn({ method: "POST" })
                   <!-- Footer Area -->
                   <div style="padding: 30px; background-color: #fdfafb; text-align: center;">
                     <p style="font-size: 11px; color: #b0a4a4; letter-spacing: 0.1em; margin: 0;">
-                      Sent from your <strong style="color: #e8809a;">Anime Portfolio</strong> &copy; 2026
+                      Sent from your <strong style="color: #e8809a;">Petal Garden</strong> &copy; 2026
                     </p>
                   </div>
                 </div>
