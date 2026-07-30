@@ -5,9 +5,9 @@ import { useScrollReveal } from "@/hooks/use-reveal";
 const skills = [
   { id: "ui", name: "Game Development", x: 250, y: 360, desc: "Building immersive game experiences using Unity Engine with a focus on interactivity and real-time environments.", labelPos: "bottom" },
   { id: "react", name: "Version Control", x: 420, y: 280, desc: "Managing projects efficiently using GitHub and Plastic SCM with version control, collaboration workflows, and structured repositories.", labelPos: "bottom" },
-  { id: "motion", name: "Full Stack Web Development", x: 450, y: 188, desc: "Developing full stack web applications with modern technologies, scalable architecture, and responsive design.", labelPos: "top" },
+  { id: "motion", name: "Full Stack Web Development", x: 450, y: 188, desc: "Developing full-stack web applications using modern technologies, implementing responsive design, Firebase Authentication, Google Search Console, and Google Analytics.", labelPos: "top" },
   { id: "illust", name: "Programming Language", x: 650, y: 100, desc: "Writing efficient C# code for Game logic, scripting, and building interactive VR/AR Experiences", labelPos: "top" },
-  { id: "swift", name: "Database", x: 725, y: 130, desc: "Handling databases using Supabase and MongoDB for scalable storage, queries, and real-time data management.", labelPos: "bottom" },
+  { id: "swift", name: "Database and Hosting", x: 725, y: 130, desc: "Handling databases using Supabase and MongoDB for scalable storage, queries, and real-time data management. Using Vercel for deployments", labelPos: "bottom" },
   { id: "aitools", name: "AI Tools", x: 580, y: 310, desc: "Using AI tools and code editors like Cursor, Windsurf, Bolt.dly and more to enhance productivity, automate workflows, and streamline development.", labelPos: "bottom" },
   { id: "uiux", name: "UI", x: 700, y: 360, desc: "Designing user interfaces in Figma and Framer with a focus on usability, aesthetics, and interactive prototyping.", labelPos: "bottom" },
 ];
