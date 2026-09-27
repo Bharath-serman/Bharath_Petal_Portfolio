@@ -6,11 +6,19 @@ import anime from "animejs";
 const achievements = [
   {
     id: 1,
+<<<<<<< HEAD
     title: "JLPT N5 Certification",
     issuer: "JALTRA",
     date: "July 2026",
     tag: "Language Certification",
     desc: "Successfully passed the Japanese Language Proficiency Test (JLPT) N5 level, demonstrating foundational proficiency in the Japanese language, including basic grammar, vocabulary, and reading comprehension.",
+=======
+    title: "Duolingo Streak",
+    issuer: "Duolingo",
+    date: "Ongoing",
+    tag: "Language Learning",
+    desc: "Maintained a 800+ day streak in Japanese on Duolingo, showcasing consistency, discipline, and strong commitment to continuous learning.",
+>>>>>>> 17869cad2fbd194c95fc10c5dc4466ef8226cbc4
     rotation: -3,
     color: "oklch(0.78 0.16 145)", // Dull Yellow
   },

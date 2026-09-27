@@ -24,7 +24,7 @@ const works = [
     title: "The Green Void",
     desc: "A 3D Game made using unity engine as part of my Game Development journey. This game focuses on narrative storytelling and interactive gameplay.",
     chips: ["Unity Engine", "C-Sharp", "3D", "Game"],
-    link: "https://github.com/Bharath-serman/The_Green_Void",
+    link: "https://bharath-serman.itch.io/the-green-void",
   },
   {
     img: Aesthetic,
@@ -40,7 +40,7 @@ const works = [
     title: "Cassiora",
     desc: "A placement preparation site which is done completely using AI. Here you can take coding practices, MCQ Questions, Mock Interview with AI and more.",
     chips: ["React JS", "Preparation site", "Open Source"],
-    link: "https://github.com/Bharath-serman/Cassiora",
+    link: "https://placement-cassiora.vercel.app/",
   },
   {
     img: Balloon,
@@ -48,7 +48,7 @@ const works = [
     title: "2D Balloon Popper Game",
     desc: "A small 2D Balloon Popper Game made with Unity Engine. This project is built as a part of my learning purposes for 2D Journey. Uploaded in Itch.io!",
     chips: ["Unity Engine", "2D", "Itch IO"],
-    link: "https://github.com/Bharath-serman/2D-Balloon_Popper-Game",
+    link: "https://bharath-serman.itch.io/balloon-popper",
   },
   {
     img: AR,
@@ -96,7 +96,7 @@ const works = [
     title: "Verdantia",
     desc: "An Augmented reality based project made using unity engine. This is verdantia, A Garden in AR. Built with features like Plane detection, Object Instantiation and more.",
     chips: ["Augmented Reality", "Unity Engine", "Mobile AR Development"],
-    link: "https://github.com/Bharath-serman/Verdantia",  //Github link
+    link: "https://github.com/Bharath-serman/Verdantia",
   },
 
 ];
