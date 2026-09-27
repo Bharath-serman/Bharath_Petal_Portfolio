@@ -6,11 +6,11 @@ import anime from "animejs";
 const achievements = [
   {
     id: 1,
-    title: "Duolingo Streak",
-    issuer: "Duolingo",
-    date: "Ongoing",
-    tag: "Language Learning",
-    desc: "Maintained a 750+ day streak in Japanese on Duolingo, showcasing consistency, discipline, and strong commitment to continuous learning.",
+    title: "JLPT N5 Certification",
+    issuer: "JALTRA",
+    date: "July 2026",
+    tag: "Language Certification",
+    desc: "Successfully passed the Japanese Language Proficiency Test (JLPT) N5 level, demonstrating foundational proficiency in the Japanese language, including basic grammar, vocabulary, and reading comprehension.",
     rotation: -3,
     color: "oklch(0.78 0.16 145)", // Dull Yellow
   },
@@ -53,7 +53,17 @@ const achievements = [
     desc: "Developed a travel planner for CMRL that displays fare, distance, and platform details using API integration. Built an interactive Leaflet map to highlight routes, optimized the UI for both desktop and mobile, and implemented real-time data updates for accurate travel information.",
     rotation: 4,
     color: "oklch(0.78 0.18 35)", // Orange
-  }
+  },
+  {
+    id: 5,
+    title: "Duolingo Streak",
+    issuer: "Duolingo",
+    date: "Ongoing",
+    tag: "Language Learning",
+    desc: "Maintained a 750+ day streak in Japanese on Duolingo, showcasing consistency, discipline, and strong commitment to continuous learning.",
+    rotation: -3,
+    color: "oklch(0.78 0.16 145)", // Dull Yellow
+  },
 ];
 
 export function Achievements() {
