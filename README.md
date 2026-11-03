@@ -32,8 +32,8 @@ If you'd like to wander through this code on your own machine, follow these step
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Bharath-serman/Anime-Portfolio.git
-    cd Anime-Portfolio
+    git clone https://github.com/Bharath-serman/Bharath_Petal_Portfolio.git
+    cd Bharath_Petal_Portfolio
     ```
 
 2.  **Plant the dependencies:**
