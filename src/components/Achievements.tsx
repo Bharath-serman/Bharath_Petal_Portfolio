@@ -60,7 +60,7 @@ const achievements = [
     issuer: "Duolingo",
     date: "Ongoing",
     tag: "Language Learning",
-    desc: "Maintained a 750+ day streak in Japanese on Duolingo, showcasing consistency, discipline, and strong commitment to continuous learning.",
+    desc: "Maintained a 900+ day streak in Japanese on Duolingo, showcasing consistency, discipline, and strong commitment to continuous learning.",
     rotation: -3,
     color: "oklch(0.78 0.16 145)", // Dull Yellow
   },
